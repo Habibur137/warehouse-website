@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home/Home";
@@ -20,6 +21,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}
+      <ToastContainer />
     </div>
   );
 }

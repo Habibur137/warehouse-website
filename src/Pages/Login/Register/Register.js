@@ -6,15 +6,17 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   // user create state
   const [createUserWithEmailAndPassword, createUser, loading, CreateError] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   // update profile state
   const [updateProfile, updating, error] = useUpdateProfile(auth);
+
   // handle login
-  console.log(createUser);
   const handleForm = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -22,10 +24,10 @@ const Register = () => {
     const displayName = e.target.displayName.value;
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName });
-    toast("account created");
-    console.log(email, password, displayName);
-    console.log(createUser);
+    toast("account created, verify your email");
+    e.target.reset();
   };
+
   return (
     <div>
       <form onSubmit={handleForm}>
@@ -34,6 +36,10 @@ const Register = () => {
         <input type="password" name="password" id="" placeholder="Password" />
         <input type="submit" value="Register" />
       </form>
+      <p>
+        <Link to="/login">Login</Link>
+      </p>
+      <GoogleLogin />
       <ToastContainer />
     </div>
   );
