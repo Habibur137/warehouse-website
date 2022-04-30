@@ -1,17 +1,17 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import img1 from "../../images/banner-1.png";
-import img2 from "../../images/banner-2.jpg";
-import img3 from "../../images/banner-3.jpg";
+import img1 from "../../images/bn-1.webp";
+import img2 from "../../images/bn-2.webp";
+import img3 from "../../images/bn-3.webp";
 
 const Baner = () => {
   return (
-    <div style={{ height: "90vh" }}>
+    <div style={{ height: "70vh" }}>
       <Carousel>
         <Carousel.Item interval={1000}>
           <img
             className="d-block w-100"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
             src={img1}
             alt="First slide"
           />
@@ -23,7 +23,7 @@ const Baner = () => {
         <Carousel.Item interval={500}>
           <img
             className="d-block w-100"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
             src={img2}
             alt="Second slide"
           />
@@ -35,7 +35,7 @@ const Baner = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
             src={img3}
             alt="Third slide"
           />
