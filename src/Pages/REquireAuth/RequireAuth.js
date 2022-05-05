@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
 
-function RequireAuth({ children }) {
-  const [user] = useState(auth);
+const RequireAuth = ({ children }) => {
+  const [user] = useAuthState(auth);
   let location = useLocation();
-
   if (!user) {
     // Redirect them to the /login page, but save the current location they were
     // trying to go to when they were redirected. This allows us to send them
@@ -15,5 +15,6 @@ function RequireAuth({ children }) {
   }
 
   return children;
-}
+};
+
 export default RequireAuth;
