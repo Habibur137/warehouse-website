@@ -30,17 +30,34 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={handleForm}>
-        <input type="text" name="displayName" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="password" id="" placeholder="Password" />
-        <input type="submit" value="Register" />
-      </form>
-      <p>
-        <Link to="/login">Login</Link>
-      </p>
-      <GoogleLogin />
-      <ToastContainer />
+      <h3
+        style={{
+          position: "absolute",
+          left: " 43%",
+          color: "#fff",
+          top: "16%",
+          zIndex: "999",
+        }}
+      >
+        Register Here
+      </h3>
+      <div className="login-box">
+        <form onSubmit={handleForm}>
+          <p>Name</p>
+          <input type="text" name="displayName" placeholder="Name" />
+          <p>Email</p>
+          <input type="email" name="email" placeholder="Email" />
+          <p>Password</p>
+          <input type="password" name="password" id="" placeholder="Password" />
+          <input type="submit" value="Register" />
+        </form>
+
+        <Link style={{ color: "darkgray" }} to="/login">
+          Already have an account?
+        </Link>
+        <GoogleLogin />
+        <ToastContainer />
+      </div>
     </div>
   );
 };
