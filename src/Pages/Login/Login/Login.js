@@ -8,6 +8,8 @@ import auth from "../../../firebase.init";
 import "react-toastify/dist/ReactToastify.css";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
 import { Link } from "react-router-dom";
+import "./login.css";
+import loginImage from "../../../images/log.jpg";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, signInError] =
@@ -30,14 +32,20 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div className="login-box">
+      <div className="img">
+        <img src={loginImage} alt="" />
+      </div>
+      <h3>Login Here</h3>
       <form onSubmit={handleForm}>
+        <p>Email</p>
         <input
           onChange={handleChange}
           type="email"
           name="email"
           placeholder="Email"
         />
+        <p>Password</p>
         <input
           onChange={handleChange}
           type="password"
@@ -47,21 +55,22 @@ const Login = () => {
         />
         <input type="submit" value="Login" />
       </form>
-      <p>
-        Need an account? <Link to="/register">Register</Link>
-      </p>
-      <p
-        onClick={async () => {
-          if (!user) {
-            await sendPasswordResetEmail(email);
-            toast("Sent password reset email");
-          } else {
-            return;
-          }
-        }}
-      >
-        Forgot Password?
-      </p>
+      <div className="info">
+        {" "}
+        <Link to="/register">Need an account?</Link>
+        <span
+          onClick={async () => {
+            if (!user) {
+              await sendPasswordResetEmail(email);
+              toast("Sent password reset email");
+            } else {
+              return;
+            }
+          }}
+        >
+          Forgot Password?
+        </span>
+      </div>
       <GoogleLogin />
       <ToastContainer />
     </div>
