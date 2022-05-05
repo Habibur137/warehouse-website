@@ -4,7 +4,6 @@ import InventoryItem from "../Home/InventoryItem/InventoryItem";
 
 const Inventory = () => {
   const [inventory] = useInventory();
-  console.log(inventory);
   return (
     <div className="container px-4">
       <div className="text-center my-4">

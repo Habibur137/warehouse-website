@@ -7,11 +7,13 @@ import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
 import "react-toastify/dist/ReactToastify.css";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
 import loginImage from "../../../images/log.jpg";
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
   const [signInWithEmailAndPassword, user, loading, signInError] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, resetError] =
@@ -22,6 +24,7 @@ const Login = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  let from = location.state?.from?.pathname || "/";
   // handle login
   const handleForm = (e) => {
     e.preventDefault();
@@ -29,6 +32,7 @@ const Login = () => {
     // show toast
     if (user?.email) {
       toast("Login Successfully");
+      navigate(from, { replace: true });
     }
   };
   return (
