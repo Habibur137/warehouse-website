@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Blogs from "./Pages/Blogs/Blogs";
 import Home from "./Pages/Home/Home/Home";
 import InventoryItemDetail from "./Pages/Home/Home/InventoryItemDetail/InventoryItemDetail";
 import ManageInventory from "./Pages/Home/Home/ManageInventory/ManageInventory";
@@ -45,7 +46,8 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

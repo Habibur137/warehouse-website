@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-light">
-      <div class="container px-4 my-5">
+      <div class="container px-4 pb-4 mt-5">
         <div class="row gx-5">
           <div class="col-12 col-lg-4">
             <h3 style={{ textAlign: "left" }}>About Company</h3>

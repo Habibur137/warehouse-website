@@ -22,6 +22,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/inventory">
                 Inventory
               </Nav.Link>
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
               {user && (
                 <div className="d-flex">
                   <Nav.Link as={Link} to="/manageinventory">
