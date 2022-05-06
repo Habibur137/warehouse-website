@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
 import InventoryItem from "../Home/InventoryItem/InventoryItem";
 
 const Inventory = () => {
-  const [inventory] = useInventory();
+  const [inventory] = useInventory(2022);
+  console.log(inventory);
   return (
     <div className="container px-4">
       <div className="text-center my-4">
@@ -14,6 +16,14 @@ const Inventory = () => {
         {inventory.map((item, index) => (
           <InventoryItem {...item} key={index} />
         ))}
+      </div>
+      <div className="text-center">
+        <Link
+          className="px-5 py-1 bg-info text-white my-4 d-inline-block"
+          to="/manageinventory"
+        >
+          Manage Inventory
+        </Link>
       </div>
     </div>
   );

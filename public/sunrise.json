@@ -5,7 +5,8 @@
         "price":"15 Lakh",
         "quantity":"10",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/hyfbGXL/hyundai.jpg"
+        "img":"https://i.ibb.co/hyfbGXL/hyundai.jpg",
+        "releaseYear":"2022"
     },
     {
         "name":"2022 AVOLON",
@@ -13,7 +14,8 @@
         "price":"10 Lakh",
         "quantity":"8",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/0s8SBSm/mahindra.jpg"
+        "img":"https://i.ibb.co/0s8SBSm/mahindra.jpg",
+        "releaseYear":"2022"
     },
     {
         "name":"2022 GR SUPRA",
@@ -21,7 +23,8 @@
         "price":"20 Lakh",
         "quantity":"4",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/MPzt633/nissan.webp"
+        "img":"https://i.ibb.co/MPzt633/nissan.webp",
+        "releaseYear":"2022"
     },
     {
         "name":"2022 COROLLA",
@@ -29,24 +32,99 @@
         "price":"25 Lakh",
         "quantity":"6",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/vJ7qsk0/renault.png"
+        "img":"https://i.ibb.co/vJ7qsk0/renault.png",
+        "releaseYear":"2022"
     },
     {
         "name":"2022 PRIUS PRIME",
         "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
-        "price":"30 Lakh",
+        "price":"10 Lakh",
         "quantity":"10",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/2qptH1k/suzuki.jpg"
+        "img":"https://i.ibb.co/2qptH1k/suzuki.jpg",
+        "releaseYear":"2022"
     },
     {
         "name":"2022 SIENNA",
         "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
-        "price":"35 Lakh",
+        "price":"20 Lakh",
         "quantity":"3",
         "supplier":"Renault India",
-        "img":"https://i.ibb.co/qmPbwPz/toyota.jpg"
+        "img":"https://i.ibb.co/D42W7DH/5.jpg",
+        "releaseYear":"2022"
+    },
+    {
+        "name":"Renault KWID",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"30 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/Dw1TN5Z/kwid.webp"
+    },
+    {
+        "name":"Renault ARKANA",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/BKX2TZc/arkana.jpg"
+    },
+    {
+        "name":"Renault CLIO",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/J7kybdV/clio.webp"
+    },
+    {
+        "name":"Renault KIGER",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/8xrXVBY/kiger.webp"
+    },
+    {
+        "name":"Renault K-ZE",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/crPwNps/k-ze.jpg"
+    },
+   
+    {
+        "name":"Renault SCENIC",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/FVGc8w5/scenic.jpg"
+    },
+    {
+        "name":"Renault TRIBER",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/mRjqbrJ/triber.webp"
+    },
+    {
+        "name":"Renault TURBO",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/Jsvxn9Q/turbo.webp"
+    },
+    {
+        "name":"Renault ZOE",
+        "desc":"Go where your curiosity takes you with the Renault Kiger.Its stunning yet muscular SUV stance is crafted to complement your free spirit. The sporty performance coupled with smart interiors brings in the perfect balance of power and convenience. So, take the wheel and chase new experiences.",
+        "price":"35 Lakh",
+        "quantity":"15",
+        "supplier":"Renault India",
+        "img":"https://i.ibb.co/w4LdCfG/zoe.webp"
     }
-   
-   
+ 
 ]

@@ -1,16 +1,16 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 import useSingleInventory from "../../../../hooks/useSingleInventory";
 
 const InventoryItemDetail = () => {
   const { id } = useParams();
   const [singleInventory] = useSingleInventory(id);
-  const { name, desc, _id, price, supplier, quantity, img } = singleInventory;
+  let { name, desc, price, supplier, quantity, img } = singleInventory;
   const handleQuantity = (e) => {
     e.preventDefault();
-    const quantity = e.target.quantity.value;
-    const updateQuantity = { quantity };
+    let previousQuantity = parseInt(quantity);
+    const inputQuantity = parseInt(e.target.quantity.value);
+    const updateQuantity = { quantity: (previousQuantity += inputQuantity) };
     console.log(updateQuantity);
     fetch(`http://localhost:5000/inventory/${id}`, {
       method: "PUT",
@@ -22,7 +22,7 @@ const InventoryItemDetail = () => {
       .then((res) => res.json())
       .then((data) => {
         e.target.reset();
-        toast("update successfully");
+        alert("update successfully");
         console.log(data);
       });
   };
@@ -70,6 +70,14 @@ const InventoryItemDetail = () => {
             />
           </form>
         </div>
+      </div>
+      <div className="text-center">
+        <Link
+          className="px-5 py-1 bg-info text-white my-4 d-inline-block"
+          to="/manageinventory"
+        >
+          Manage Inventory
+        </Link>
       </div>
     </div>
   );

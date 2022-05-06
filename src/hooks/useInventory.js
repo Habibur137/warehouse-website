@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 
-const useInventory = () => {
+const useInventory = (year) => {
   const [inventory, setInventory] = useState([]);
   useEffect(() => {
     const getInventory = async () => {
-      const resposive = await fetch("http://localhost:5000/inventory");
-      const result = await resposive.json();
-      setInventory(result);
+      if (year) {
+        const resposive = await fetch(
+          `http://localhost:5000/inventory?releaseYear=${year}`
+        );
+        const result = await resposive.json();
+        setInventory(result);
+      } else {
+        const resposive = await fetch(`http://localhost:5000/inventory`);
+        const result = await resposive.json();
+        setInventory(result);
+      }
     };
     getInventory();
-  }, []);
-  return [inventory];
+  }, [year]);
+  return [inventory, setInventory];
 };
 
 export default useInventory;
