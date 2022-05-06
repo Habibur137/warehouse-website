@@ -22,6 +22,19 @@ const Header = () => {
               <Nav.Link as={Link} to="/inventory">
                 Inventory
               </Nav.Link>
+              {user && (
+                <div className="d-flex">
+                  <Nav.Link as={Link} to="/manageinventory">
+                    Manage Item
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/manageinventory">
+                    Add Item
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/myitems">
+                    My Items
+                  </Nav.Link>
+                </div>
+              )}
 
               {user ? (
                 <Nav.Link onClick={() => signOut(auth)} as={Link} to="/login">

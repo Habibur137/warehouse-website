@@ -1,9 +1,12 @@
 import React from "react";
-import useInventory from "../../../../hooks/useInventory";
-import ManageItem from "../../ManageItem/ManageItem";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
+import useInventory from "../../hooks/useInventory";
 
-const ManageInventory = () => {
-  const [inventory, setInventory] = useInventory();
+const MyItems = () => {
+  const [user] = useAuthState(auth);
+  const [inventory, setInventory] = useInventory("", user?.email);
   console.log(inventory);
   const handleItemAdd = (e) => {
     e.preventDefault();
@@ -14,6 +17,7 @@ const ManageInventory = () => {
     const desc = e.target.desc.value;
     const img = e.target.img.value;
     const item = {
+      email: user?.email,
       name,
       price,
       quantity,
@@ -31,8 +35,25 @@ const ManageInventory = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        e.target.reset();
+        // e.target.reset();
+        if (data.insertedId) {
+          toast("item added");
+        }
       });
+  };
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      fetch(`http://localhost:5000/inventory/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const filterInventory = inventory.filter((item) => item._id !== id);
+          setInventory(filterInventory);
+        });
+    }
   };
   return (
     <div className="container">
@@ -50,12 +71,18 @@ const ManageInventory = () => {
             </thead>
             <tbody>
               {inventory.map((item, index) => (
-                <ManageItem
-                  item={item}
-                  key={index}
-                  setInventory={setInventory}
-                  inventory={inventory}
-                />
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.supplier}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="bg-info border-0 w-100"
+                  >
+                    X
+                  </button>
+                </tr>
               ))}
             </tbody>
           </table>
@@ -63,6 +90,14 @@ const ManageInventory = () => {
         <div className="col-12 col-lg-4">
           <h3>Add Item</h3>
           <form onSubmit={handleItemAdd} className="d-flex flex-column ">
+            <input
+              className="mb-2 text-black"
+              style={{ borderBottom: "1px solid gray" }}
+              type="text"
+              value={user?.email}
+              readOnly
+              disabled
+            />
             <input
               className="mb-2 text-black"
               style={{ borderBottom: "1px solid gray" }}
@@ -92,7 +127,7 @@ const ManageInventory = () => {
               name="price"
             />
             <input
-              className="mb-4 text-black"
+              className="mb-2 text-black"
               style={{ borderBottom: "1px solid gray" }}
               type="text"
               placeholder="Quantity"
@@ -117,4 +152,4 @@ const ManageInventory = () => {
   );
 };
 
-export default ManageInventory;
+export default MyItems;

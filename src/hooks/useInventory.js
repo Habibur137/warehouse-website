@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 
-const useInventory = (year) => {
+const useInventory = (year = "", email) => {
   const [inventory, setInventory] = useState([]);
   useEffect(() => {
     const getInventory = async () => {
       if (year) {
         const resposive = await fetch(
           `http://localhost:5000/inventory?releaseYear=${year}`
+        );
+        const result = await resposive.json();
+        setInventory(result);
+      } else if (email) {
+        const resposive = await fetch(
+          `http://localhost:5000/inventory?email=${email}`
         );
         const result = await resposive.json();
         setInventory(result);
@@ -17,7 +23,7 @@ const useInventory = (year) => {
       }
     };
     getInventory();
-  }, [year]);
+  }, [year, email]);
   return [inventory, setInventory];
 };
 
