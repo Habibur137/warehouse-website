@@ -25,6 +25,17 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   let from = location.state?.from?.pathname || "/";
+  if (loading || sending) {
+    return <p>Loading...</p>;
+  }
+  let err;
+  if (signInError || resetError) {
+    err = (
+      <p>
+        {signInError.message} {resetError.message}
+      </p>
+    );
+  }
   // handle login
   const handleForm = (e) => {
     e.preventDefault();
@@ -73,6 +84,7 @@ const Login = () => {
         />
         <input type="submit" value="Login" />
       </form>
+      {err}
       <div className="info">
         {" "}
         <Link to="/register">Need an account?</Link>

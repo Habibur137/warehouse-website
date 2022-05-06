@@ -14,8 +14,16 @@ const GoogleLogin = () => {
     toast("Login Succesfull");
     navigate(from, { replace: true });
   }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  let err;
+  if (error) {
+    err = <p>{error.message}</p>;
+  }
   return (
     <div>
+      {err}
       <button
         onClick={() => {
           signInWithGoogle();

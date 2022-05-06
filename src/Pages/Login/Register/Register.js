@@ -11,11 +11,21 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   // user create state
-  const [createUserWithEmailAndPassword, createUser, loading, CreateError] =
+  const [createUserWithEmailAndPassword, createUser, loading, createError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   // update profile state
   const [updateProfile, updating, error] = useUpdateProfile(auth);
-
+  let err;
+  if (createError || error) {
+    err = (
+      <p>
+        {error.message} {createError.message}
+      </p>
+    );
+  }
+  if (loading || updating) {
+    return <p>Loading...</p>;
+  }
   // handle login
   const handleForm = async (e) => {
     e.preventDefault();
@@ -51,7 +61,7 @@ const Register = () => {
           <input type="password" name="password" id="" placeholder="Password" />
           <input type="submit" value="Register" />
         </form>
-
+        {err}
         <Link style={{ color: "darkgray" }} to="/login">
           Already have an account?
         </Link>
