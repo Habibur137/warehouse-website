@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
-import useInventory from "../../hooks/useInventory";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
-  const [inventory, setInventory] = useInventory("", user?.email);
+  const [inventory, setInventory] = useState([]);
+  useEffect(() => {
+    const getInventory = async () => {
+      const resposive = await fetch(
+        `https://damp-escarpment-79081.herokuapp.com/inventorys?email=${user?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+      const result = await resposive.json();
+      setInventory(result);
+    };
+    getInventory();
+  }, [user]);
   console.log(inventory);
   const handleItemAdd = (e) => {
     e.preventDefault();
@@ -25,7 +39,7 @@ const MyItems = () => {
       desc,
       img,
     };
-    fetch("http://localhost:5000/inventory", {
+    fetch("https://damp-escarpment-79081.herokuapp.com/inventory", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,8 +48,7 @@ const MyItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        // e.target.reset();
+        e.target.reset();
         if (data.insertedId) {
           toast("item added");
         }
@@ -44,7 +57,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://damp-escarpment-79081.herokuapp.com/inventory/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -21,7 +21,7 @@ const ManageInventory = () => {
       desc,
       img,
     };
-    fetch("http://localhost:5000/inventory", {
+    fetch("https://damp-escarpment-79081.herokuapp.com/inventory", {
       method: "POST",
       headers: {
         "content-type": "application/json",

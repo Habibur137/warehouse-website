@@ -1,34 +1,25 @@
 import { useEffect, useState } from "react";
 
-const useInventory = (year = "", email) => {
+const useInventory = (year) => {
   const [inventory, setInventory] = useState([]);
   useEffect(() => {
     const getInventory = async () => {
       if (year) {
         const resposive = await fetch(
-          `http://localhost:5000/inventory?releaseYear=${year}`
-        );
-        const result = await resposive.json();
-        setInventory(result);
-      } else if (email) {
-        const resposive = await fetch(
-          `http://localhost:5000/inventory?email=${email}`,
-          {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-          }
+          `https://damp-escarpment-79081.herokuapp.com/inventory?releaseYear=${year}`
         );
         const result = await resposive.json();
         setInventory(result);
       } else {
-        const resposive = await fetch(`http://localhost:5000/inventory`);
+        const resposive = await fetch(
+          `https://damp-escarpment-79081.herokuapp.com/inventory`
+        );
         const result = await resposive.json();
         setInventory(result);
       }
     };
     getInventory();
-  }, [year, email]);
+  }, [year]);
   return [inventory, setInventory];
 };
 

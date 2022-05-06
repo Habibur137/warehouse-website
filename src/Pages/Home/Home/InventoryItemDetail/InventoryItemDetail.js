@@ -12,7 +12,7 @@ const InventoryItemDetail = () => {
     const inputQuantity = parseInt(e.target.quantity.value);
     const updateQuantity = { quantity: (previousQuantity += inputQuantity) };
     console.log(updateQuantity);
-    fetch(`http://localhost:5000/inventory/${id}`, {
+    fetch(`https://damp-escarpment-79081.herokuapp.com/inventory/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

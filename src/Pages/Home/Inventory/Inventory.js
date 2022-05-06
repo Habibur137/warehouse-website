@@ -13,7 +13,7 @@ const Inventory = () => {
         <h5>Renault India</h5>
       </div>
       <div className="row g-4">
-        {inventory.map((item, index) => (
+        {inventory?.map((item, index) => (
           <InventoryItem {...item} key={index} />
         ))}
       </div>

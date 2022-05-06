@@ -5,7 +5,7 @@ const ManageItem = ({ item, setInventory, inventory }) => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://damp-escarpment-79081.herokuapp.com/inventory/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
