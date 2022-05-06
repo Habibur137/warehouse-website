@@ -29,11 +29,25 @@ const Login = () => {
   const handleForm = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
+
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.accessToken);
+        toast("Login Successfully");
+        navigate(from, { replace: true });
+        console.log(data);
+      });
     // show toast
-    if (user?.email) {
-      toast("Login Successfully");
-      navigate(from, { replace: true });
-    }
+    // if (user?.email) {
+    //
+    // }
   };
   return (
     <div className="login-box">

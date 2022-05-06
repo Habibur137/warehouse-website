@@ -12,7 +12,12 @@ const useInventory = (year = "", email) => {
         setInventory(result);
       } else if (email) {
         const resposive = await fetch(
-          `http://localhost:5000/inventory?email=${email}`
+          `http://localhost:5000/inventory?email=${email}`,
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+          }
         );
         const result = await resposive.json();
         setInventory(result);
