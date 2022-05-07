@@ -2,10 +2,10 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div class="container px-4">
-      <div class="row gx-5">
+    <div className="container px-4">
+      <div className="row gx-5">
         <h3>difference between node js vs javascript</h3>
-        <div class="col-12 col-lg-6">
+        <div className="col-12 col-lg-6">
           <h4>JavaScript</h4>
           <p>
             Javascript is a Scripting language. It is mostly abbreviated as JS.
@@ -28,7 +28,7 @@ const Blogs = () => {
             and Spidermonkey in Firefox.{" "}
           </p>
         </div>
-        <div class="col-12 col-lg-6">
+        <div className="col-12 col-lg-6">
           <h4>Node JS</h4>
           <p>
             NodeJS is a cross-platform and opensource Javascript runtime
@@ -48,9 +48,9 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <div class="row gx-5 mt-4">
+      <div className="row gx-5 mt-4">
         <h3>difference between nosql vs sql</h3>
-        <div class="col-12 col-lg-6">
+        <div className="col-12 col-lg-6">
           <h4>Sql</h4>
           <p>RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)</p>
           <p>These databases have fixed or static or predefined schema</p>
@@ -58,7 +58,7 @@ const Blogs = () => {
           <p>These databases are best suited for complex queries</p>
           <p>Vertically Scalable</p>
         </div>
-        <div class="col-12 col-lg-6">
+        <div className="col-12 col-lg-6">
           <h4>Nosql</h4>
           <p>Non-relational or distributed database system.</p>
           <p> They have dynamic schema</p>
@@ -67,9 +67,9 @@ const Blogs = () => {
           <p> Horizontally scalable</p>
         </div>
       </div>
-      <div class="row gx-5">
+      <div className="row gx-5">
         <h3>what is the purpose of jwt and how does it works</h3>
-        <div class="col-12">
+        <div className="col-12">
           <h4>What Is JWT?</h4>
           <p>
             JWT, or JSON Web Token, is an open standard used to share security
@@ -94,9 +94,9 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <div class="row gx-5">
+      <div className="row gx-5">
         <h3>Why Node.js ?</h3>
-        <div class="col">
+        <div className="col">
           <p>
             Node.js is an open source, a server-side script which runs on the
             top of Google’s open-source scripting engine V8. Node.js is fast,

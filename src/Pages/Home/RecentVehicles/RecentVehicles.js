@@ -41,16 +41,16 @@ export default class RecentVehicles extends Component {
     };
     return (
       <div style={{ backgroundColor: "#F1E5EF" }} className="py-3">
-        <div class="container px-4 my-5">
-          <div class="row g-3">
-            <div class="col-12 col-lg-2">
+        <div className="container px-4 my-5">
+          <div className="row g-3">
+            <div className="col-12 col-lg-2">
               <h6>RECENT VEHICLES</h6>
               <p>
                 Browse through the vast selection of vehicles that have recently
                 been added to our inventory.
               </p>
             </div>
-            <div class="col-12 col-lg-10">
+            <div className="col-12 col-lg-10">
               {" "}
               <Slider {...settings}>
                 <div>

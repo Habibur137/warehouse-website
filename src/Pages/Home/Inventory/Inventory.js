@@ -5,7 +5,6 @@ import InventoryItem from "../Home/InventoryItem/InventoryItem";
 
 const Inventory = () => {
   const [inventory] = useInventory(2022);
-  console.log(inventory);
   return (
     <div className="container px-4">
       <div className="text-center my-4">
