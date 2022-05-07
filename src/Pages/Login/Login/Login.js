@@ -53,7 +53,6 @@ const Login = () => {
         localStorage.setItem("accessToken", data.accessToken);
         toast("Login Successfully");
         navigate(from, { replace: true });
-        console.log(data);
       });
     // show toast
     // if (user?.email) {

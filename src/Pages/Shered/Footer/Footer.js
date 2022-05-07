@@ -2,8 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const footStyle = {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+  };
   return (
-    <div className="bg-light">
+    <div className="bg-light ">
       <div className="container px-4 pb-4 mt-5">
         <div className="row gx-5">
           <div className="col-12 col-lg-4">

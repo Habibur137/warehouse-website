@@ -1,14 +1,12 @@
 .login-box {
-  margin-top: 20px;
+  margin: 20px auto;
   width: 320px;
   height: 460px;
   background: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   color: #fff;
   padding: 60px 30px;
+  overflow: hidden;
 }
 
 .login-box .img img {
@@ -17,7 +15,7 @@
   border-radius: 50%;
   position: absolute;
   top: -50px;
-  left: calc(50% - 50px);
+  left: 100px;
 }
 h3 {
   padding: 0 0 20px;
