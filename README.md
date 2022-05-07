@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Sunrise Motors
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Website Link ](https://sunrise-motors.web.app/).
+
+## What Accually Done In This Project
+
+- It's a react app project.
+- Car inventory website.
+- Authentication system implemented by react firebase hooks.
+- Manage car quantity in the inventory.
+- Manage Stocks
+
+### Technology
+
+- React JS for front end
+- Node JS for back end
+- MonogoDB Database
 
 ## Available Scripts
 
